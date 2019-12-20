@@ -65,7 +65,7 @@ class Create extends React.Component{
       return config;
     });
 
-    axios.get('http://localhost:4000')
+    axios.get('https://my-first-proj.herokuapp.com/')
     .then(function(response){
       arr = response.data
       console.log(response)
@@ -85,7 +85,7 @@ class Create extends React.Component{
   async handleSubmit(event){
     event.preventDefault();
     console.log(arr)
-    await axios.post('http://localhost:4000/',this.state)
+    await axios.post('https://my-first-proj.herokuapp.com/',this.state)
     .then(function (response) {
     //  arr=response.config.data
     console.log(response.config.data);
@@ -138,7 +138,7 @@ class List extends React.Component{
       return config;
     });
 
-    axios.get('http://localhost:4000')
+    axios.get('https://my-first-proj.herokuapp.com/')
     .then(function(response){
       arr = response.data
       console.log(response)
@@ -151,7 +151,7 @@ class List extends React.Component{
 
   async handleDelete(item){
     // event.preventDefault();
-    await axios.delete(`http://localhost:4000/${item._id}`)
+    await axios.delete(`https://my-first-proj.herokuapp.com/${item._id}`)
     .then(function(response){
       console.log(response.data)
     })
@@ -224,7 +224,7 @@ class Update extends React.Component{
       return config;
     });
 
-    axios.get('http://localhost:4000')
+    axios.get('https://my-first-proj.herokuapp.com/')
     .then(function(response){
       arr = response.data
       console.log(response)
@@ -243,7 +243,7 @@ class Update extends React.Component{
   async handleUpdate(event){
     // event.preventDefault();
     // console.log(this.props.prop._id)
-    await axios.patch(`http://localhost:4000/${this.props.prop._id}`,this.state)
+    await axios.patch(`https://my-first-proj.herokuapp.com/${this.props.prop._id}`,this.state)
     .then(function(response){
       console.log(response.data)
     })
