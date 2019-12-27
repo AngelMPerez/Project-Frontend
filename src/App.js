@@ -13,6 +13,22 @@ import {
 var arr=[]
 // var item
 
+function read(){
+  axios.interceptors.request.use(config => {
+    // log a message before any HTTP request is sent
+    console.log('Request was sent');
+    return config;
+  });
+  axios.get('https://my-first-proj.herokuapp.com/')
+  .then(function(response){
+    arr = response.data
+    console.log(response)
+  })
+  .catch(function(error){
+    console.log(error)
+  })
+}
+
 export default function BasicExample() {
   return (
     <Router>
@@ -55,27 +71,8 @@ class Create extends React.Component{
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.read=this.read.bind(this);
   }
   
-  read(){
-    axios.interceptors.request.use(config => {
-      // log a message before any HTTP request is sent
-      console.log('Request was sent');
-      return config;
-    });
-
-    axios.get('https://my-first-proj.herokuapp.com/')
-    .then(function(response){
-      arr = response.data
-      console.log(response)
-    })
-    .catch(function(error){
-      console.log(error)
-    })
-
-  }
-
   handleChange(event){
     this.setState({
       [event.target.name]: event.target.value
@@ -94,7 +91,7 @@ class Create extends React.Component{
       // handle error
       console.log(error);
     })
-    this.read()
+    read()
   }
 
 forms(){
@@ -111,11 +108,11 @@ forms(){
 
 componentDidMount(){
   // this.forceUpdate()
-  // this.read()
+  // read()
 }
 
  render(){
-  this.read()
+  read()
   
   return (
       <div style={{textAlign:'center'}}>
@@ -130,24 +127,6 @@ componentDidMount(){
 }
 
 class List extends React.Component{
- 
-  read(){
-    axios.interceptors.request.use(config => {
-      // log a message before any HTTP request is sent
-      // console.log('Request was sent');
-      return config;
-    });
-
-    axios.get('https://my-first-proj.herokuapp.com/')
-    .then(function(response){
-      arr = response.data
-      console.log(response)
-    })
-    .catch(function(error){
-      console.log(error)
-    })
-  }
-
 
   async handleDelete(item){
     // event.preventDefault();
@@ -158,7 +137,7 @@ class List extends React.Component{
     .catch(function(error){
       console.log(error)
     })
-    this.read()
+    read()
     // this.render()
   }
 // componentDidMount(){
@@ -166,7 +145,7 @@ class List extends React.Component{
 //   this.read()
 // }
   render(){
-    // this.read()
+    read()
     // this.forceUpdate()
     let x = arr.map((item, index)=>
       <div class='center' key={index}>
@@ -214,24 +193,6 @@ class Update extends React.Component{
     };
     this.handleChange = this.handleChange.bind(this)
     this.handleUpdate = this.handleUpdate.bind(this);
-    this.read=this.read.bind(this);
-  }
-  
-  read(){
-    axios.interceptors.request.use(config => {
-      // log a message before any HTTP request is sent
-      console.log('Request was sent');
-      return config;
-    });
-
-    axios.get('https://my-first-proj.herokuapp.com/')
-    .then(function(response){
-      arr = response.data
-      console.log(response)
-    })
-    .catch(function(error){
-      console.log(error)
-    })
   }
 
   handleChange(event){
@@ -270,7 +231,7 @@ class Update extends React.Component{
 
   
   render(){
-  // this.read()
+    read()
   
   // this.forceUpdate()
   return (
