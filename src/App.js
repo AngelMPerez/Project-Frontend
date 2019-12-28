@@ -97,11 +97,23 @@ class Create extends React.Component{
 forms(){
   return(
     <form >
-      <b>Type: </b><input type='text' value={this.state.value} name='Type' placeholder='Type' onChange={this.handleChange}></input><br/>
-      <b>Name: </b><input type='text' value={this.state.value} name='Name' placeholder='Name' onChange={this.handleChange}></input><br/>
-      <b>Input: </b><input type="text" value={this.state.value} name="Input" placeholder="Input"  onChange={this.handleChange}></input><br/>
-      <b>Output: </b><input type="text" value={this.state.value} name="Output" placeholder="Output"  onChange={this.handleChange}></input><br/>
+      <div class= "form-group">
+        <label ><b>Type: </b></label> 
+      <input type='text' value={this.state.value} name='Type' placeholder='Type' onChange={this.handleChange}></input><br/>
+      {/* <div  style={{padding:'0px 42em 0px 45em'}}>
+      <select class="form-control form-control-sm">
+        <option>Algorithm</option>
+        <option>Data Structure</option>
+      </select><br/>
+      </div> */}
+      <label ><b>Name: </b></label>
+      <input type='text' value={this.state.value} name='Name' placeholder='Name' onChange={this.handleChange}></input><br/>
+      <label><b>Input: </b></label>
+      <input type="text" value={this.state.value} name="Input" placeholder="Input"  onChange={this.handleChange}></input><br/>
+      <label ><b>Output: </b></label>
+      <input type="text" value={this.state.value} name="Output" placeholder="Output"  onChange={this.handleChange}></input><br/>
       <textarea rows="4" cols="50" value={this.state.value} name="Description" placeholder='Description' onChange={this.handleChange}/>
+      </div>
     </form>
   )
 }
@@ -140,10 +152,7 @@ class List extends React.Component{
     read()
     // this.render()
   }
-// componentDidMount(){
-//   this.forceUpdate()
-//   this.read()
-// }
+
   render(){
     read()
     // this.forceUpdate()
@@ -210,12 +219,7 @@ class Update extends React.Component{
     })
     .catch(function(error){
       console.log(error)
-    })
-    // this.forceUpdate()
-
-    // this.componentWillUpdate()
-    // this.render()
-    
+    })    
   }
 
   forms(){
