@@ -161,14 +161,14 @@ class List extends React.Component{
         <div class='card col-sm-7' style={{background:'grey'}} key={index}>
         <h3>------------------------</h3>
         {/* <h3>ID: {item._id}</h3> */}
-        <h3><u>Type:</u> {item.Type}</h3>
-        <h3><u>Name:</u> {item.Name}</h3>
-        <h3><u>Input:</u> {item.Input}</h3>
-        <h3><u>Output:</u> {item.Output}</h3>
-        <h3><u>Description:</u> {item.Description}</h3>
+        <h3><u>Type:</u> <i>{item.Type}</i></h3>
+        <h3><u>Name:</u> <i>{item.Name}</i></h3>
+        <h3><u>Input:</u> <i>{item.Input}</i></h3>
+        <h3><u>Output:</u> <i>{item.Output}</i></h3>
+        <h3><u>Description:</u></h3> <h4><i>{item.Description}</i></h4>
         {/* <button onClick={this.handleUpdate}> Update</button> */}
         
-        <button class="alert alert-danger" onClick={()=>this.handleDelete(item)}>Delete</button>
+        <button class="alert alert-danger"  onClick={()=>this.handleDelete(item)}>Delete</button>
         <Router>
           <Link  to="/Update"><button class="alert alert-primary">Update</button></Link>
           <Route exact path="/Update">
