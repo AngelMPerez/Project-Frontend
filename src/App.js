@@ -1,8 +1,8 @@
 import React from "react";
 import './App.css'
-import Create from './Create'
-import List from './List'
-import read from './read'
+import Create from './components/Create'
+import List from './components/List'
+import read from './components/read'
 
 import {
   BrowserRouter as Router,
