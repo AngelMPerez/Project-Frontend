@@ -9,23 +9,6 @@ import {
     Link
   } from "react-router-dom";
 
-// function read(){
-//     // axios.interceptors.request.use(config => {
-//     //   // log a message before any HTTP request is sent
-//     //   console.log('Request was sent');
-//     //   return config;
-//     // });
-//     axios.get('https://my-first-proj.herokuapp.com/')
-//     .then(function(response){
-//       arr = response.data
-//       console.log(response)
-//     })
-//     .catch(function(error){
-//       console.log(error)
-//     })
-//     console.log('read in list')
-//   }
-
 export default class List extends React.Component{
 
     async handleDelete(item){
@@ -48,8 +31,8 @@ export default class List extends React.Component{
   
     render(){
     //   this.componentDidMount()
-    let arr = read()
-      let x = arr.map((item, index)=>
+        let arr = read()
+        let x = arr.map((item, index)=>
         <div  style={{paddingLeft:'30rem'}}  key={index}>
           <div className='col-sm-6' style={{background:'grey'}}>
           <h3>------------------------</h3>
@@ -126,16 +109,15 @@ export default class List extends React.Component{
     </fieldset>)
   }
   
-    
     render(){
-      read()
+    //   read()
     
     // this.forceUpdate()
     return (
         <div>
           <h2>Update</h2>
           {this.forms()}
-          <button class="alert alert-primary" onClick={this.handleUpdate}>Change</button>
+          <button className="alert alert-primary" onClick={this.handleUpdate}>Change</button>
         </div>
       );
     }  
