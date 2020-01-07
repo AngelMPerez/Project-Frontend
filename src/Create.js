@@ -2,26 +2,6 @@ import React from "react";
 import axios from 'axios';
 import read from './read'
 
-// var arr=[]
-
-// function read(){
-//     // axios.interceptors.request.use(config => {
-//     //   // log a message before any HTTP request is sent
-//     //   console.log('Request was sent');
-//     //   return config;
-//     // });
-//     axios.get('https://my-first-proj.herokuapp.com/')
-//     .then(function(response){
-//       arr = response.data
-//       console.log('read in create')
-//       console.log(response)
-//     })
-//     .catch(function(error){
-//       console.log(error)
-//     })
-//   }
-  
-
 export default class Create extends React.Component{
     constructor(props){
       super(props);

@@ -3,8 +3,6 @@ import './App.css'
 import Create from './Create'
 import List from './List'
 import read from './read'
-// import {useHistory} from "react-router-dom";
-// import Hook from './Hook'
 
 import {
   BrowserRouter as Router,
@@ -12,24 +10,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-// var arr=[]
-
-// async function read(){
-//   // axios.interceptors.request.use(config => {
-//   //   // log a message before any HTTP request is sent
-//   //   console.log('Request was sent');
-//   //   return config;
-//   // });
-//   axios.get('https://my-first-proj.herokuapp.com/')
-//   .then(function(response){
-//     arr = response.data
-//     console.log(response)
-//   })
-//   .catch(function(error){
-//     console.log(error)
-//   })
-//   console.log('read in BasicExample')
-// }
 
 export default function BasicExample() {
 
@@ -59,6 +39,3 @@ export default function BasicExample() {
     </Router>
   );
 }
-
-// You can think of these components as "pages"
-// in your app.
