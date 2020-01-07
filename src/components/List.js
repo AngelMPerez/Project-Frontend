@@ -29,10 +29,7 @@ export default class List extends React.Component{
       // this.render()
     }
     
-
-
     reRender(){
-      
        this.setState({ x : read()})}
 
     componentDidMount(){
@@ -52,7 +49,6 @@ export default class List extends React.Component{
       //     <h3><u>Input:</u> <i>{item.Input}</i></h3>
       //     <h3><u>Output:</u> <i>{item.Output}</i></h3>
       //     <h3><u>Description:</u></h3> <h4><i>{item.Description}</i></h4>
-          
       //     <button className="alert alert-danger"  onClick={()=>this.handleDelete(item)}>Delete</button>
       //     <Router>
       //       <Link  to="/Update"><button className="alert alert-primary">Update</button></Link>
@@ -90,9 +86,7 @@ export default class List extends React.Component{
           <h3>------------------------</h3>
           </div>
         </div>
-      )}
-        {/* <button onClick={}> Update</button> */}
-        
+      )}    
       </div>
       );
     }
