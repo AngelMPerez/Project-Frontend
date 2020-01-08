@@ -5,13 +5,7 @@ import read from './read'
 export default class Create extends React.Component{
     constructor(props){
       super(props);
-      this.state={
-        Type: 'Empty',
-        Name:'Empty',
-        Input: 'Empty',
-        Output: 'Empty',
-        Description: 'Empty'
-      };
+      this.state={};
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleChange = this.handleChange.bind(this);
     }
@@ -61,13 +55,13 @@ export default class Create extends React.Component{
     )
   }
   
-//   componentDidMount(){
-//     read()
-//   }
+  componentDidMount(){
+    read()
+  }
   
    render(){
     // this.componentDidMount()
-    read()
+    // read()
     return (
         <div style={{textAlign:'center'}}>
           {/* <h2>Create</h2> */}

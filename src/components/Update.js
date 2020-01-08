@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+// import form from './form'
 
 
 export default class Update extends React.Component{
@@ -47,12 +48,13 @@ export default class Update extends React.Component{
   
     render(){
     //   read()
-    
+    // let y = form(this.state)
     // this.forceUpdate()
     return (
         <div>
           <h2>Update</h2>
           {this.forms()}
+          {/* {y} */}
           <button className="alert alert-primary" onClick={this.handleUpdate}>Change</button>
         </div>
       );
