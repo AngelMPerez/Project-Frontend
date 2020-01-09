@@ -2,7 +2,6 @@ import React from "react";
 import './App.css'
 import Create from './components/Create'
 import List from './components/List'
-import read from './components/read'
 
 import {
   BrowserRouter as Router,
@@ -11,9 +10,16 @@ import {
   Link
 } from "react-router-dom";
 
+function redirect(){
+  let to = ()=>{
+    document.getElementById("List").click()
+  }
+  return to
+}
+
 export default function BasicExample() {
 
-  read()
+  // read()
   return (
     <Router>
       <div style={{textAlign: "center"}}>
@@ -23,13 +29,13 @@ export default function BasicExample() {
             <Link style={{color:'#0C1B33'}} to="/">Create</Link>
           </li>
           <li>
-            <Link style={{color:'#0C1B33'}} to="/List">List</Link>
+            <Link style={{color:'#0C1B33'}} id="List" to="/List">List</Link>
           </li>
         </ul>
         <hr />
         <Switch>
           <Route exact path="/">
-            <Create />
+            <Create redirect={redirect()}/>
           </Route>
           <Route path="/List">
             <List />

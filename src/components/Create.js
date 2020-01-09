@@ -1,6 +1,12 @@
 import React from "react";
 import axios from 'axios';
-import read from './read'
+
+// var  state={
+//   Type:'d',
+//   Name:'d',
+//   Input:'d',
+//   Output:'d',
+// };
 
 export default class Create extends React.Component{
     constructor(props){
@@ -11,26 +17,31 @@ export default class Create extends React.Component{
     }
     
     handleChange(event){
+      // this.setState
       this.setState({
         [event.target.name]: event.target.value
       });
-    }
+      // console.log(this.state)
+    }    
   
-    async handleSubmit(event){
+    async handleSubmit(){
     //   event.preventDefault();
       await axios.post('https://my-first-proj.herokuapp.com/',this.state)
       .then(function (response) {
       //  arr=response.config.data
       console.log(response.config.data);
       })
+      .then(this.props.redirect())
+      // .then(this.renderList())
       .catch(function (error) {
         // handle error
         console.log(error);
       })
-      read()
+      // read()
     //   console.log(arr)
     }
   
+
   forms(){
     return(
       <form >
@@ -56,7 +67,7 @@ export default class Create extends React.Component{
   }
   
   componentDidMount(){
-    read()
+    // read()
   }
   
    render(){
@@ -66,9 +77,7 @@ export default class Create extends React.Component{
         <div style={{textAlign:'center'}}>
           {/* <h2>Create</h2> */}
           {this.forms()}
-          <button className="alert alert-success" role="alert" onClick={this.handleSubmit}>Create</button>
-          {/* <button onClick={this.handleUpdate}>Update</button> */}
-          {/* <button onClick={this.handleDelete}>Delete</button> */}
+              <button className="alert alert-success" role="alert" onClick={this.handleSubmit}>Create</button>            
         </div>
       );
     }
