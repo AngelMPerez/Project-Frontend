@@ -8,30 +8,28 @@ import {
     Link
   } from "react-router-dom";
 
-  var arr=[]
-  function read(){
-    // axios.interceptors.request.use(config => {
-    //   // log a message before any HTTP request is sent
-    //   console.log('Request was sent');
-    //   return config;
-    // });
-    axios.get('https://my-first-proj.herokuapp.com/')
-    .then(function(response){
-      arr = response.data 
-      console.log(response)
-    })
-    .catch(function(error){
-      console.log(error)
-    })
-    return arr
-  }
-  
+// var arr  
 export default class List extends React.Component{
       state = { 
-        x:[]
+        x:[],
       }
    
-    
+    read(){
+      // axios.interceptors.request.use(config => {
+      //   // log a message before any HTTP request is sent
+      //   console.log('Request was sent');
+      //   return config;
+      // });
+      axios.get('https://my-first-proj.herokuapp.com/')
+      .then((response)=>{
+        this.setState({x:response.data})
+      })
+      .catch(function(error){
+        console.log(error)
+      })
+      // return arr
+    }
+
 
     async handleDelete(item){
       // event.preventDefault();
@@ -40,8 +38,8 @@ export default class List extends React.Component{
         console.log(response.data)
       })
       .then(()=>{
-        // this.read()
-        this.reRender()
+        this.read()
+        // read()
         // console.log('calling read')
       })
       .catch(function(error){
@@ -49,13 +47,12 @@ export default class List extends React.Component{
       })
     }
 
-    reRender(){
-       this.setState({ x : read()})
-    }
+    // reRender(){
+    //    this.setState({ x : read()})
+    // }
 
     componentDidMount(){
-      // this.read()
-      this.reRender()
+      this.read()
     }
   
     render(){
