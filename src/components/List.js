@@ -39,17 +39,11 @@ export default class List extends React.Component{
       })
       .then(()=>{
         this.read()
-        // read()
-        // console.log('calling read')
       })
       .catch(function(error){
         console.log(error)
       })
     }
-
-    // reRender(){
-    //    this.setState({ x : read()})
-    // }
 
     componentDidMount(){
       this.read()

@@ -18,13 +18,10 @@ function redirect(){
 }
 
 export default function BasicExample() {
-
-  // read()
   return (
     <Router>
       <div style={{textAlign: "center"}}>
         <ul>
-          
           <li>
             <Link style={{color:'#0C1B33'}} to="/">Create</Link>
           </li>

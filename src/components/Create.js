@@ -1,13 +1,6 @@
 import React from "react";
 import axios from 'axios';
 
-// var  state={
-//   Type:'d',
-//   Name:'d',
-//   Input:'d',
-//   Output:'d',
-// };
-
 export default class Create extends React.Component{
     constructor(props){
       super(props);
@@ -17,7 +10,6 @@ export default class Create extends React.Component{
     }
     
     handleChange(event){
-      // this.setState
       this.setState({
         [event.target.name]: event.target.value
       });
@@ -28,17 +20,13 @@ export default class Create extends React.Component{
     //   event.preventDefault();
       await axios.post('https://my-first-proj.herokuapp.com/',this.state)
       .then(function (response) {
-      //  arr=response.config.data
       console.log(response.config.data);
       })
       .then(this.props.redirect())
-      // .then(this.renderList())
       .catch(function (error) {
         // handle error
         console.log(error);
       })
-      // read()
-    //   console.log(arr)
     }
   
 
@@ -66,13 +54,8 @@ export default class Create extends React.Component{
     )
   }
   
-  componentDidMount(){
-    // read()
-  }
-  
    render(){
-    // this.componentDidMount()
-    // read()
+  
     return (
         <div style={{textAlign:'center'}}>
           {/* <h2>Create</h2> */}
