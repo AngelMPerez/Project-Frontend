@@ -29,11 +29,11 @@ export default class List extends React.Component{
       })
     }
 
-    handleChange(event){
-      this.setState({
-        [event.target.name]: event.target.value
-      });
-    }
+    // handleChange(event){
+    //   this.setState({
+    //     [event.target.name]: event.target.value
+    //   });
+    // }
 
     //  y = ()=>{this.read()}
     async handleDelete(item){
