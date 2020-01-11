@@ -86,37 +86,37 @@ export default class List extends React.Component{
           <button className="alert alert-danger" onClick={()=>this.handleDelete(item._id)}> Delete </button>
 
           {/* <!-- Button trigger modal --> */}
-<button type="button" className="alert alert-primary" data-toggle="modal" data-target='#exampleModal'>
-  Update
-</button>
+      <button type="button" className="alert alert-primary" data-toggle="modal" data-target='#exampleModal'>
+        Update
+      </button>
 
-{/* <!-- Modal --> */}
-<div className="modal" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div className="modal-dialog" role="document">
-    <div className="modal-content">
-      <div className="modal-header">
-        <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" className="close" data-dismiss="modal-backdrop" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      {/* <!-- Modal --> */}
+      <div className="modal" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" className="close" data-dismiss="modal-backdrop" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+            <fieldset>
+                Type:  <input type='text' name='Type' placeholder={item.Type} onChange={this.handleChange}></input><br/>
+                Name:  <input type='text' name='Name' placeholder={item.Name} onChange={this.handleChange}></input><br/>
+                Input: <input type="text" name="Input" placeholder={item.Input}  onChange={this.handleChange}></input><br/>
+                Output: <input type="text" name="Output" placeholder={item.Output}  onChange={this.handleChange}></input><br/>
+                <textarea rows="4" cols="50" name="Description" placeholder={item.Description} onChange={this.handleChange}/>
+              </fieldset>
+          
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-primary" >Save changes</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="modal-body">
-      <fieldset>
-          Type:  <input type='text' name='Type' placeholder={item.Type} onChange={this.handleChange}></input><br/>
-          Name:  <input type='text' name='Name' placeholder={item.Name} onChange={this.handleChange}></input><br/>
-          Input: <input type="text" name="Input" placeholder={item.Input}  onChange={this.handleChange}></input><br/>
-          Output: <input type="text" name="Output" placeholder={item.Output}  onChange={this.handleChange}></input><br/>
-          <textarea rows="4" cols="50" name="Description" placeholder={item.Description} onChange={this.handleChange}/>
-        </fieldset>
-     
-      </div>
-      <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-primary" >Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
           
           {/* <Router>
             <Link  to="/Update"><button className="alert alert-primary">Update</button></Link>
