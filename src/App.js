@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios'
 import './App.css'
 import Create from './components/Create'
 import List from './components/List'
@@ -9,6 +10,24 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
+var arr=[]
+
+function read(){
+  // axios.interceptors.request.use(config => {
+  //   // log a message before any HTTP request is sent
+  //   console.log('Request was sent');
+  //   return config;
+  // });
+  axios.get('https://my-first-proj.herokuapp.com/')
+  .then((response)=>{
+    arr=response.data
+  })
+  .catch(function(error){
+    console.log(error)
+  })
+  return arr
+}
 
 function redirect(){
   let to = ()=>{
@@ -35,7 +54,7 @@ export default function BasicExample() {
             <Create redirect={redirect()}/>
           </Route>
           <Route path="/List">
-            <List />
+            <List read={read()} />
             </Route>
         </Switch>
       </div>

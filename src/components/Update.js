@@ -35,16 +35,13 @@ export default class Update extends React.Component{
     
 
     async handleUpdate(event){
-      // event.preventDefault();
+      event.preventDefault();
       // console.log(this.props.prop._id)
       await axios.patch(`https://my-first-proj.herokuapp.com/${this.props.prop._id}`,this.state)
       .then(function(response){
         console.log(response.data)
       })
-    //   .then(()=>{
-    //     let y = new List()
-    //     y.componentDidMount()
-    //   })
+      .then(()=>this.props.redirect())
       .catch(function(error){
         console.log(error)
       })   
