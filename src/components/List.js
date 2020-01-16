@@ -1,13 +1,13 @@
 import React from "react";
 import axios from 'axios';
 import '../fix.css'
-// import Update from './Update'
+import Update from './Update'
 
-// import {
-//     BrowserRouter as Router,
-//     Route,
-//     Link
-//   } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+  } from "react-router-dom";
 
 export default class List extends React.Component{
       state = { 
@@ -85,12 +85,12 @@ export default class List extends React.Component{
           {console.log('reRender',index)}    
           <button className="alert alert-danger" onClick={()=>this.handleDelete(item._id)}> Delete </button>
 
-          {/* <!-- Button trigger modal --> */}
+          {/* <!-- Button trigger modal -->
       <button type="button" className="alert alert-primary" data-toggle="modal" data-target='#exampleModal'>
         Update
       </button>
 
-      {/* <!-- Modal --> */}
+      <!-- Modal -->
       <div className="modal" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
@@ -117,14 +117,14 @@ export default class List extends React.Component{
           </div>
         </div>
       </div>
-          
-          {/* <Router>
+           */}
+          <Router>
             <Link  to="/Update"><button className="alert alert-primary">Update</button></Link>
             <Route exact path="/Update">
                 <Update prop={item} redirect={()=>this.props.redirect()}/>
                 
             </Route>
-          </Router> */}
+          </Router>
           <h3>------------------------</h3>
           </div>
         </div>
